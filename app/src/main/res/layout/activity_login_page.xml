@@ -1,0 +1,70 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#CFD8DC"
+    tools:context="br.com.rt.govan.loginPage" >
+
+    <LinearLayout
+        android:id="@+id/linearCampos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            android:hint="@string/usuario" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textPassword"
+            android:hint="@string/password" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/linearBotoes"
+        android:text="@string/registrar"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearBotoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearCampos"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="@string/botaoLogar" />
+
+        <Button
+            android:id="@+id/btnSair"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="@string/botaoSair" />
+    </LinearLayout>
+</RelativeLayout>

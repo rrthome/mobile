@@ -1,0 +1,63 @@
+<resources>
+    //////////////////////////////////////////////////////////////
+    // Global
+    <string name="datalbl">Selecione a data</string>
+    <string name="dataformat">01/01/1900</string>
+    <string name="lblida">Saída</string>
+    <string name="lblvolta">Retorno</string>
+    <string name="horaformat">00:00</string>
+    <string name="raio">Raio (KM)</string>
+    <string name="raiokm">000</string>
+
+
+
+    /////////////////////////////////////////////////////////////
+    // Main
+    <string name="app_name">Go Van</string>
+    <string name="intro_txt">Pesquisa de Vans</string>
+    <string name="hint_nome">Digite seu nome</string>
+    <string name="limpar">Resetar</string>
+    <string name="buscar">Buscar</string>
+    <string name="funcao">Selecione o tipo de serviço</string>
+
+    // Menu Main
+    <string name="action_settings">Configurações</string>
+
+    // Itens da dropdown
+    <string-array name="tiposervicos">
+        <item> </item>
+        <item>Viagem</item>
+        <item>Escolar/Universitário</item>
+        <item>Excursão</item>
+        <item>Outros</item>
+    </string-array>
+
+    ////////////////////////////////////////////////////////////
+    // Login
+    <string name="title_activity_login_page">Login</string>
+
+    <string name="usuario">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="registrar">Registre-se aqui</string>
+    <string name="botaoLogar">Login</string>
+    <string name="botaoSair">Sair</string>
+    <string name="title_activity_registrar">Registrar</string>
+
+    // Cadastro
+    <string name="regvan">Van</string>
+    <string name="regclient">Cliente</string>
+    <string name="email">e-Mail</string>
+    <string name="ddi">000</string>
+    <string name="ddd">000</string>
+    <string name="fone">000000000</string>
+    <string name="nomecontato">Nome do contato</string>
+    <string name="regdados">Registrar</string>
+    <string name="cancdados">Cancelar</string>
+    <string name="senha">Digite a senha</string>
+    <string name="confsenha">Confirme a senha</string>
+
+    // Menu Cadastro
+    <string name="mRegVan">Van</string>
+    <string name="mRegCliente">Cliente</string>
+
+</resources>
