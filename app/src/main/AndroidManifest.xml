@@ -24,6 +24,14 @@
             android:name=".registrar"
             android:label="@string/title_activity_registrar" >
         </activity>
+        <activity
+            android:name=".painelVans"
+            android:label="@string/title_activity_painel_vans" >
+        </activity>
+        <activity
+            android:name=".regVan"
+            android:label="@string/title_activity_reg_van" >
+        </activity>
     </application>
 
 </manifest>

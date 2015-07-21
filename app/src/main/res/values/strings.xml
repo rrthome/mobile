@@ -8,8 +8,31 @@
     <string name="horaformat">00:00</string>
     <string name="raio">Raio (KM)</string>
     <string name="raiokm">000</string>
+    <string name="contato">Telefones de contato</string>
+    <string name="localizacao">Localização</string>
+    <string name="pais">País</string>
+    <string name="estado">Estado</string>
+    <string name="cidade">Cidade</string>
 
-
+    // Arrays Globais
+    <string-array name="arrayPais">
+        <item> </item>
+        <item>Brasil</item>
+    </string-array>
+    <string-array name="arrayEstado">
+        <item> </item>
+        <item>Espírito Santo</item>
+        <item>Minas Gerais</item>
+        <item>São Paulo</item>
+        <item>Rio de Janeiro</item>
+    </string-array>
+    <string-array name="arrayCidade">
+        <item> </item>
+        <item>Belo Horizonte</item>
+        <item>Betim</item>
+        <item>Contagem</item>
+        <item>Divinópolis</item>
+    </string-array>
 
     /////////////////////////////////////////////////////////////
     // Main
@@ -38,12 +61,15 @@
 
     <string name="usuario">Usuário</string>
     <string name="password">Senha</string>
-    <string name="registrar">Registre-se aqui</string>
+    <string name="registrar">Registrar</string>
     <string name="botaoLogar">Login</string>
     <string name="botaoSair">Sair</string>
     <string name="title_activity_registrar">Registrar</string>
 
-    // Cadastro
+    // Validação Senha
+    <string name="validacaosenha">Usuário/senha inválidos</string>
+
+    // Cadastro Van
     <string name="regvan">Van</string>
     <string name="regclient">Cliente</string>
     <string name="email">e-Mail</string>
@@ -55,9 +81,30 @@
     <string name="cancdados">Cancelar</string>
     <string name="senha">Digite a senha</string>
     <string name="confsenha">Confirme a senha</string>
+    <string name="regsvctipo">Serviços prestados</string>
+
+    // Tipos de serviço
+    <string name="regtpsvc1">Viagem</string>
+    <string name="regtpsvc2">Escolar/Universitário</string>
+    <string name="regtpsvc3">Excursão</string>
+    <string name="regtpsvc4">Outros</string>
 
     // Menu Cadastro
     <string name="mRegVan">Van</string>
     <string name="mRegCliente">Cliente</string>
+
+    ///////////////////////////////////////////////////////////////
+    // Painel
+    <string name="title_activity_painel_vans">Painel de Vans</string>
+    <string name="painelNome">Nome:</string>
+    <string name="painelEmail">e-Mail:</string>
+    <string name="painelTelefone">Telefone:</string>
+    <string name="paineltpsvc">Tipo serviço:</string>
+
+    // Menu Painel
+    <string name="painelBusca">Busca avançada</string>
+    <string name="title_activity_reg_van">regVan</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
+import govan.RegConfirmation;
+
+import static br.com.rt.govan.R.*;
+
 public class loginPage extends AppCompatActivity implements View.OnClickListener {
 
     // Botões
     private Button btLogin;
-    private Button btSair;
     private Button btRegistrar;
 
     // Valores
@@ -21,18 +24,15 @@ public class loginPage extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(layout.activity_login_page);
 
-        usuario = (EditText)findViewById(R.id.user);
-        senha   = (EditText)findViewById(R.id.password);
+        usuario = (EditText) findViewById(id.user);
+        senha = (EditText) findViewById(id.password);
 
-        btLogin = (Button)findViewById(R.id.btnLogin);
+        btLogin = (Button) findViewById(id.btnLogin);
         btLogin.setOnClickListener(this);
 
-        btSair  = (Button)findViewById(R.id.btnSair);
-        btSair.setOnClickListener(this);
-
-        btRegistrar = (Button)findViewById(R.id.registrar);
+        btRegistrar = (Button) findViewById(id.registrar);
         btRegistrar.setOnClickListener(this);
     }
 
@@ -65,29 +65,29 @@ public class loginPage extends AppCompatActivity implements View.OnClickListener
      */
     @Override
     public void onClick(View v) {
-       if (v == btLogin){
-           String usr = usuario.getText().toString();
-           String pwd = senha.getText().toString();
+        if (v == btLogin) {
+            String usr = usuario.getText().toString();
+            String pwd = senha.getText().toString();
 
-           if (!usr.isEmpty() && !pwd.isEmpty()) {
-               Intent it = new Intent(loginPage.this, PaginaPesquisa.class);
-               startActivity(it);
-           }else{
-               AlertDialog alertDialog;
-               alertDialog = new AlertDialog.Builder(this).create();
-               alertDialog.setTitle("Go Van");
-               alertDialog.setMessage("Usuário/Senha inválidos.");
-               alertDialog.show();
-           }
-       }
-
-        if (v == btSair){
-            finish();
+            if (!usr.isEmpty() && !pwd.isEmpty()) {
+                Intent it = new Intent(loginPage.this, painelVans.class);
+                startActivity(it);
+            } else {
+                AlertDialog alertDialog;
+                alertDialog = new AlertDialog.Builder(this).create();
+                alertDialog.setTitle(string.app_name);
+                alertDialog.setMessage("Usuário/senha inválidos");
+                alertDialog.show();
+            }
         }
 
-        if (v == btRegistrar){
-            Intent it = new Intent(loginPage.this, registrar.class);
-            startActivity(it);
+        if (v == btRegistrar) {
+            this.showDialog(v);
         }
+    }
+
+    public void showDialog(View view) {
+        RegConfirmation msg = new RegConfirmation();
+        msg.show(getFragmentManager(), "Mensagem");
     }
 }
