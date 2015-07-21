@@ -8,6 +8,7 @@ import android.view.*;
 import android.widget.*;
 
 import govan.RegConfirmation;
+import govan.UserError;
 
 import static br.com.rt.govan.R.*;
 
@@ -73,11 +74,13 @@ public class loginPage extends AppCompatActivity implements View.OnClickListener
                 Intent it = new Intent(loginPage.this, painelVans.class);
                 startActivity(it);
             } else {
-                AlertDialog alertDialog;
+                /*AlertDialog alertDialog;
                 alertDialog = new AlertDialog.Builder(this).create();
                 alertDialog.setTitle(string.app_name);
                 alertDialog.setMessage("Usuário/senha inválidos");
-                alertDialog.show();
+                alertDialog.show();*/
+
+                this.showDialog(v);
             }
         }
 
@@ -87,7 +90,15 @@ public class loginPage extends AppCompatActivity implements View.OnClickListener
     }
 
     public void showDialog(View view) {
-        RegConfirmation msg = new RegConfirmation();
-        msg.show(getFragmentManager(), "Mensagem");
+
+        if (view == btLogin) {
+            UserError ue = new UserError();
+            ue.show(getFragmentManager(),"Erro");
+        }
+
+        if (view == btRegistrar) {
+            RegConfirmation msg = new RegConfirmation();
+            msg.show(getFragmentManager(), "Mensagem");
+        }
     }
 }

@@ -4,14 +4,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
-public class regVan extends AppCompatActivity {
+public class regVan extends AppCompatActivity implements View.OnClickListener {
 
-    // Dados
+    // Dados Dropdown
     private ArrayAdapter<CharSequence> adpPais, adpEstado, adpCidade;
     private Spinner spPais, spEstado, spCidade;
+
+    // Botões
+    private Button btnRegVanConf, btnRegVanCanc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,7 @@ public class regVan extends AppCompatActivity {
         setContentView(R.layout.activity_reg_van);
 
         this.inicializarSpinners();
+        this.inicializaButtons();
     }
 
     @Override
@@ -43,6 +49,17 @@ public class regVan extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == btnRegVanCanc){
+            finish();
+        }
+
+        if (v == btnRegVanConf){
+
+        }
+    }
+
     public void inicializarSpinners(){
         // Spinner Pais
         spPais = (Spinner)findViewById(R.id.regvanspPais);
@@ -64,5 +81,15 @@ public class regVan extends AppCompatActivity {
         adpCidade = ArrayAdapter.createFromResource(this,R.array.arrayCidade,android.R.layout.simple_spinner_dropdown_item);
         adpCidade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCidade.setAdapter(adpCidade);
+    }
+
+    public void inicializaButtons(){
+        // Botão registra
+        btnRegVanConf = (Button)findViewById(R.id.vanRegdados);
+        btnRegVanConf.setOnClickListener(this);
+
+        // Botão cancela
+        btnRegVanCanc = (Button)findViewById(R.id.vanCancdados);
+        btnRegVanCanc.setOnClickListener(this);
     }
 }
