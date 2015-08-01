@@ -1,5 +1,4 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,80 +8,115 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="br.com.rt.govan.painelVans">
 
-    <LinearLayout
-        android:id="@+id/pnlLinear"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <ScrollView
+        android:id="@+id/conVanSVCentral"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical">
+
 
         <LinearLayout
-            android:id="@+id/pnlLinarlbl"
+            android:id="@+id/pnlLinear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/pnlLinarlbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="@string/painelNome"/>
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/panelContato"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:hint="@string/nomecontato"
-                />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="@string/painelEmail"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/painelNome"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/panelEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:hint="@string/painelEmail"
-                />
+                    <TextView
+                        android:id="@+id/panelContato"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/nomecontato"
+                        android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="@string/painelTelefone"/>
+                </LinearLayout>
 
-            <EditText
-                android:id="@+id/panelTelefone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:hint="@string/painelTelefone"
-                />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:text="@string/paineltpsvc" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/painelEmail"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/paneltpsvc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:hint="@string/paineltpsvc"
-                />
+                    <TextView
+                        android:id="@+id/panelEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/painelEmail"
+                        android:textSize="20sp" />
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/painelTelefone"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/panelTelefone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/painelTelefone"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/paineltpsvc"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/paneltpsvc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/paineltpsvc"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

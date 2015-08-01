@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import br.com.rt.govan.R;
+import br.com.rt.govan.RegClient;
 import br.com.rt.govan.regVan;
 
 /**
@@ -18,7 +19,7 @@ public class RegConfirmation extends DialogFragment {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        builder.setMessage(R.string.registrar)
+        builder.setMessage(R.string.selecaoCadastro)
                 .setPositiveButton(R.string.regvan, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent it = new Intent(getActivity(),regVan.class);
@@ -27,7 +28,8 @@ public class RegConfirmation extends DialogFragment {
                 })
                 .setNegativeButton(R.string.regclient, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Toast.makeText(getActivity(),R.string.regclient,Toast.LENGTH_SHORT);
+                        Intent it = new Intent(getActivity(),RegClient.class);
+                        startActivity(it);
                     }
                 });
 

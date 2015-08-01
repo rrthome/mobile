@@ -70,16 +70,10 @@ public class loginPage extends AppCompatActivity implements View.OnClickListener
             String usr = usuario.getText().toString();
             String pwd = senha.getText().toString();
 
-            if (!usr.isEmpty() && !pwd.isEmpty()) {
+            if (usr.isEmpty() && pwd.isEmpty()) {
                 Intent it = new Intent(loginPage.this, painelVans.class);
                 startActivity(it);
             } else {
-                /*AlertDialog alertDialog;
-                alertDialog = new AlertDialog.Builder(this).create();
-                alertDialog.setTitle(string.app_name);
-                alertDialog.setMessage("Usuário/senha inválidos");
-                alertDialog.show();*/
-
                 this.showDialog(v);
             }
         }

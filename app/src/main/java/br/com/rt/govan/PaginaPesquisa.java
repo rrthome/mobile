@@ -5,6 +5,14 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+
 public class PaginaPesquisa extends AppCompatActivity implements View.OnClickListener {
 
     // Componentes visuais
@@ -19,6 +27,8 @@ public class PaginaPesquisa extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_pesquisa);
+
+        String erro;
 
         this.inicializa();
     }
@@ -50,16 +60,16 @@ public class PaginaPesquisa extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void inicializa(){
-        spTipo = (Spinner)findViewById(R.id.tiposvc);
-        btnPesquisa = (Button)findViewById(R.id.btnok);
-        btnReseta = (Button)findViewById(R.id.btnreset);
+    private void inicializa() {
+        spTipo = (Spinner) findViewById(R.id.tiposvc);
+        btnPesquisa = (Button) findViewById(R.id.btnok);
+        btnReseta = (Button) findViewById(R.id.btnreset);
 
         btnReseta.setOnClickListener(this);
         btnPesquisa.setOnClickListener(this);
 
-        adpOpcoes = new ArrayAdapter<CharSequence>(this,android.R.layout.simple_spinner_item);
-        adpOpcoes = ArrayAdapter.createFromResource(this,R.array.tiposervicos,android.R.layout.simple_spinner_dropdown_item);
+        adpOpcoes = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item);
+        adpOpcoes = ArrayAdapter.createFromResource(this, R.array.tiposervicos, android.R.layout.simple_spinner_dropdown_item);
         adpOpcoes.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spTipo.setAdapter(adpOpcoes);

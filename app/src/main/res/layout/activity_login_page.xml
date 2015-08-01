@@ -35,18 +35,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/registrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:layout_centerInParent="true"
-        android:onClick="showDialog"
-        android:layout_below="@+id/linearBotoes"
-        android:text="@string/registrar"
-        />
-
     <LinearLayout
         android:id="@+id/linearBotoes"
         android:layout_width="match_parent"
@@ -56,9 +44,21 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="75dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:text="@string/botaoLogar" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/linearBotoes"
+        android:text="@string/registrar"
+        />
 </RelativeLayout>

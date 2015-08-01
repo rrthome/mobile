@@ -10,35 +10,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.concurrent.ExecutionException;
 
 import govan.BuscarCepTask;
 
-public class regVan extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
+public class RegClient extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
 
-    // Dados
+
+    // Dados Texto
     private TextView tvEstado, tvCidade;
-    private EditText edtVanCEP;
+    private EditText edtClientCEP;
     private String cep;
 
     // Botões
-    private Button btnRegVanConf, btnRegVanCanc;
+    private Button btnRegClientConf, btnRegClientCanc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reg_van);
+        setContentView(R.layout.activity_reg_client);
 
-        this.inicializarTextos();
+        // Inicialização
         this.inicializaButtons();
+        this.inicializaTexts();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_reg_van, menu);
+        getMenuInflater().inflate(R.menu.menu_reg_client, menu);
         return true;
     }
 
@@ -50,7 +49,7 @@ public class regVan extends AppCompatActivity implements View.OnClickListener, V
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.regFB) {
             return true;
         }
 
@@ -59,18 +58,18 @@ public class regVan extends AppCompatActivity implements View.OnClickListener, V
 
     @Override
     public void onClick(View v) {
-        if (v == btnRegVanCanc){
+        if (v == btnRegClientCanc) {
             finish();
         }
 
-        if (v == btnRegVanConf){
+        if (v == btnRegClientConf) {
 
         }
     }
 
     @Override
     public void onFocusChange(View view, boolean b) {
-        if (view == edtVanCEP) {
+        if (view == edtClientCEP) {
             try {
                 this.preencheLocalizacao();
             } catch (JSONException e) {
@@ -79,43 +78,37 @@ public class regVan extends AppCompatActivity implements View.OnClickListener, V
         }
     }
 
-    public void inicializarTextos(){
-        // Textos
-        tvEstado = (TextView)findViewById(R.id.regvanspestado);
-        tvCidade = (TextView)findViewById(R.id.regvanspcidade);
+    public void inicializaTexts() {
+        edtClientCEP = (EditText) findViewById(R.id.regclientcep);
+        edtClientCEP.setOnFocusChangeListener(this);
 
-        // CEP
-        edtVanCEP = (EditText) findViewById(R.id.regvancep);
-        edtVanCEP.setOnFocusChangeListener(this);
+        tvEstado = (TextView) findViewById(R.id.regclientspestado);
+        tvCidade = (TextView) findViewById(R.id.regclientspcidade);
     }
 
-    public void inicializaButtons(){
+    public void inicializaButtons() {
         // Botão registra
-        btnRegVanConf = (Button)findViewById(R.id.vanRegdados);
-        btnRegVanConf.setOnClickListener(this);
+        btnRegClientConf = (Button) findViewById(R.id.clientRegdados);
+        btnRegClientConf.setOnClickListener(this);
 
         // Botão cancela
-        btnRegVanCanc = (Button)findViewById(R.id.vanCancdados);
-        btnRegVanCanc.setOnClickListener(this);
+        btnRegClientCanc = (Button) findViewById(R.id.clientCancdados);
+        btnRegClientCanc.setOnClickListener(this);
     }
 
     public void preencheLocalizacao() throws JSONException {
         String uf, cidade;
-        cep = edtVanCEP.getText().toString();
+        cep = edtClientCEP.getText().toString();
 
         if (!cep.isEmpty()) {
             BuscarCepTask buscaEndereco = new BuscarCepTask();
-            try {
-                String str = buscaEndereco.execute(cep).get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
+            buscaEndereco.execute(cep);
 
-            // uf = buscaEndereco.retornaUF();
-            // tvEstado.setText(uf);
+            uf = buscaEndereco.retornaUF();
+            tvEstado.setText(uf);
 
-            // cidade = buscaEndereco.retornaCidade();
-            // tvCidade.setText(cidade);
+            cidade = buscaEndereco.retornaCidade();
+            tvCidade.setText(cidade);
         }
     }
 }

@@ -8,8 +8,9 @@
     <string name="horaformat">00:00</string>
     <string name="raio">Raio (KM)</string>
     <string name="raiokm">000</string>
-    <string name="contato">Telefones de contato</string>
+    <string name="contato">Telefone para contato</string>
     <string name="localizacao">Localização</string>
+    <string name="cep">CEP</string>
     <string name="pais">País</string>
     <string name="estado">Estado</string>
     <string name="cidade">Cidade</string>
@@ -36,7 +37,7 @@
 
     /////////////////////////////////////////////////////////////
     // Main
-    <string name="app_name">Go Van</string>
+    <string name="app_name">Vai de Van</string>
     <string name="intro_txt">Pesquisa de Vans</string>
     <string name="hint_nome">Digite seu nome</string>
     <string name="limpar">Resetar</string>
@@ -71,7 +72,7 @@
 
     // Cadastro Van
     <string name="regvan">Van</string>
-    <string name="regclient">Cliente</string>
+
     <string name="email">e-Mail</string>
     <string name="ddi">000</string>
     <string name="ddd">000</string>
@@ -103,8 +104,17 @@
 
     // Menu Painel
     <string name="painelBusca">Busca avançada</string>
-    <string name="title_activity_reg_van">regVan</string>
+    <string name="title_activity_reg_van">Registro de Vans</string>
 
-    <string name="hello_world">Hello world!</string>
+    ///////////////////////////////////////////////////////////////
+    // Registro de clientes
+    <string name="title_activity_reg_client">Registro de Clientes</string>
+    <string name="regclient">Cliente</string>
+    <string name="exibeContato">Desejo exibir meu contato</string>
+    <string name="strlogfb">Login com Facebook</string>
+
+    ///////////////////////////////////////////////////////////////
+    // Mensagens de validação
+    <string name="selecaoCadastro">Selecione o tipo de cadastro</string>
 
 </resources>
