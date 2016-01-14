@@ -35,11 +35,18 @@
 
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/loginConsist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearCampos"
+        android:text="@string/consiteLogin"/>
+
     <LinearLayout
         android:id="@+id/linearBotoes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearCampos"
+        android:layout_below="@+id/loginConsist"
         android:orientation="horizontal" >
 
         <Button

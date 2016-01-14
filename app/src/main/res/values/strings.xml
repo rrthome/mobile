@@ -14,35 +14,21 @@
     <string name="pais">País</string>
     <string name="estado">Estado</string>
     <string name="cidade">Cidade</string>
-
-    // Arrays Globais
-    <string-array name="arrayPais">
-        <item> </item>
-        <item>Brasil</item>
-    </string-array>
-    <string-array name="arrayEstado">
-        <item> </item>
-        <item>Espírito Santo</item>
-        <item>Minas Gerais</item>
-        <item>São Paulo</item>
-        <item>Rio de Janeiro</item>
-    </string-array>
-    <string-array name="arrayCidade">
-        <item> </item>
-        <item>Belo Horizonte</item>
-        <item>Betim</item>
-        <item>Contagem</item>
-        <item>Divinópolis</item>
-    </string-array>
+    <string name="finalizaAPP">Sair</string>
 
     /////////////////////////////////////////////////////////////
-    // Main
+    // Orçamentos
     <string name="app_name">Vai de Van</string>
-    <string name="intro_txt">Pesquisa de Vans</string>
+    <string name="orcName">Orçamentos</string>
     <string name="hint_nome">Digite seu nome</string>
-    <string name="limpar">Resetar</string>
+    <string name="limpar">Limpar</string>
     <string name="buscar">Buscar</string>
     <string name="funcao">Selecione o tipo de serviço</string>
+    <string name="solOrc">Orçamento</string>
+    <string name="orcSaida">Lugar de Saída</string>
+    <string name="orcRetorno">Lugar para Retorno</string>
+    <string name="orcMsgConfOrcamento">Orçamento enviado! Favor aguardar respostas!</string>
+    <string name="orcMsgDadosInvalidos">Favor preencher os dados!</string>
 
     // Menu Main
     <string name="action_settings">Configurações</string>
@@ -65,6 +51,7 @@
     <string name="registrar">Registrar</string>
     <string name="botaoLogar">Login</string>
     <string name="botaoSair">Sair</string>
+    <string name="consiteLogin">Permanecer Conectado</string>
     <string name="title_activity_registrar">Registrar</string>
 
     // Validação Senha
@@ -103,7 +90,7 @@
     <string name="paineltpsvc">Tipo serviço:</string>
 
     // Menu Painel
-    <string name="painelBusca">Busca avançada</string>
+    <string name="painelBusca">Orçamento</string>
     <string name="title_activity_reg_van">Registro de Vans</string>
 
     ///////////////////////////////////////////////////////////////
@@ -116,5 +103,11 @@
     ///////////////////////////////////////////////////////////////
     // Mensagens de validação
     <string name="selecaoCadastro">Selecione o tipo de cadastro</string>
+    <string name="confereSenha">As senhas devem ser as mesmas!</string>
+    <string name="validaGeral">Valida geral</string>
+    <string name="cadOk">Cadastro validado com sucesso!</string>
+    <string name="cadError">Erro ao efetuar o cadastro!</string>
+    <string name="confDados">Todos os dados devem ser preenchidos!  </string>
 
 </resources>
+

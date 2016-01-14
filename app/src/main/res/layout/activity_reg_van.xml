@@ -13,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:isScrollContainer="true"
-        android:overScrollMode="always"
+        android:overScrollMode="ifContentScrolls"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="outsideInset"
         android:scrollbars="vertical">
@@ -118,78 +118,6 @@
                 android:inputType="textEmailAddress"
                 android:paddingBottom="8dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="8dp"
-                android:text="@string/contato"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:id="@+id/vanLinearRegTelefone1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp">
-
-                <EditText
-                    android:id="@+id/vanRegddi1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/ddi"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/vanRegddd1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/ddd"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/vanRegfone1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="8"
-                    android:hint="@string/fone"
-                    android:inputType="phone" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/vanLinearRegTelefone2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp">
-
-                <EditText
-                    android:id="@+id/vanRegddi2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/ddi"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/vanRegddd2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/ddd"
-                    android:inputType="number" />
-
-                <EditText
-                    android:id="@+id/vanRegfone2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="8"
-                    android:hint="@string/fone"
-                    android:inputType="phone" />
-            </LinearLayout>
-
             <EditText
                 android:id="@+id/vanSenha"
                 android:layout_width="match_parent"
@@ -205,52 +133,6 @@
                 android:hint="@string/confsenha"
                 android:inputType="textPassword"
                 android:paddingBottom="8dp" />
-
-            <LinearLayout
-                android:id="@+id/regVanlinearCheck"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/regsvctipo"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/regVanlinearCheckBoxes"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:scrollbars="vertical">
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="6sp"
-                        android:text="@string/regtpsvc1" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="6sp"
-                        android:text="@string/regtpsvc2" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="6sp"
-                        android:text="@string/regtpsvc3" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingBottom="6sp"
-                        android:text="@string/regtpsvc4" />
-                </LinearLayout>
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/vanButtons"

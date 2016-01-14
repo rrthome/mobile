@@ -2,11 +2,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="br.com.rt.govan.painelVans">
+    tools:context="br.com.rt.govan.painelVans" >
 
     <item
         android:id="@+id/painelBusca"
+        android:menuCategory="secondary"
         android:orderInCategory="100"
         android:title="@string/painelBusca"
-        app:showAsAction="never" />
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/finalizaAPP"
+        android:menuCategory="secondary"
+        android:orderInCategory="900"
+        android:title="@string/finalizaAPP"
+        app:showAsAction="withText" />
 </menu>

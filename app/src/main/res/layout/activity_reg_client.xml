@@ -113,52 +113,6 @@
                     android:inputType="textEmailAddress"
                     android:hint="@string/email" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="8dp"
-                    android:text="@string/contato"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/vanLinearRegClientTelefone1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingBottom="8dp">
-
-                    <EditText
-                        android:id="@+id/vanRegClientddi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/ddi"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/vanRegClientddd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="@string/ddd"
-                        android:inputType="number" />
-
-                    <EditText
-                        android:id="@+id/vanRegClientfone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:hint="@string/fone"
-                        android:inputType="phone" />
-                </LinearLayout>
-
-                <CheckBox
-                    android:id="@+id/clientChkContato"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/exibeContato"/>
-
                 <EditText
                     android:id="@+id/clientSenha"
                     android:layout_width="match_parent"

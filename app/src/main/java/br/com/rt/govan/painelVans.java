@@ -1,35 +1,49 @@
 package br.com.rt.govan;
 
+import android.app.ListActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
+import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 import govan.UserError;
+import govan.nome_van_item;
+
+import static br.com.rt.govan.R.id.panelContato;
 
 public class painelVans extends AppCompatActivity {
-
-    private EditText edtCEP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_painel_vans);
 
+        /*
         WebService ws = new WebService();
-
-        ws.execute();
+        ws.execute();*/
     }
 
     @Override
@@ -47,15 +61,35 @@ public class painelVans extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        switch (id) {
+            case R.id.painelBusca:
+                Intent it = new Intent(painelVans.this, Orcamento.class);
+                startActivity(it);
+                return true;
 
-        return super.onOptionsItemSelected(item);
+            case R.id.finalizaAPP:
+                this.limpaLogin();
+                finish();
+                System.exit(0);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
-    private void inicializaTextos(){
+    private void limpaLogin(){
+        String persisteLogin = String.valueOf(R.string.consiteLogin), S = "";
+        SharedPreferences shared = getSharedPreferences(persisteLogin, Context.MODE_PRIVATE);
 
+        S = shared.getString(persisteLogin,"N");
+        if (S.equals("S")){
+            String sSenha = String.valueOf(R.string.senha);
+            SharedPreferences.Editor editor = shared.edit();
+            editor.putString(sSenha,"");
+            editor.putString(persisteLogin,"N");
+            editor.commit();
+        }
     }
 
     private class WebService extends AsyncTask<String, Void, String> {
@@ -70,9 +104,10 @@ public class painelVans extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            if (!retorno.isEmpty()){
+            if (!retorno.isEmpty()) {
                 UserError er = new UserError();
-                er.show(getFragmentManager(),"Erro");
+                er.setMsg(getResources().getString(R.string.validacaosenha));
+                er.show(getFragmentManager(), "Erro");
             }
             return null;
         }
@@ -105,4 +140,6 @@ public class painelVans extends AppCompatActivity {
             return res;
         }
     }
+
+
 }

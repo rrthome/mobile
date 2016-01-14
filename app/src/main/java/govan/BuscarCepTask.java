@@ -15,7 +15,8 @@ import java.util.concurrent.ExecutionException;
 public class BuscarCepTask extends AsyncTask<String, Void, String> {
     URL url = null;
     HttpURLConnection httpURLConnection = null;
-    public JSONObject object;
+    private JSONObject object;
+    public String uf, cidade;
     StringBuilder result = null;
 
     @Override
@@ -56,25 +57,20 @@ public class BuscarCepTask extends AsyncTask<String, Void, String> {
 
     @Override
     protected void onPostExecute(String s) {
-        super.onPostExecute(s);
-
         try {
             this.object = new JSONObject(s);
+            uf = object.getString("uf");
+            cidade = object.getString("localidade");
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
     public String retornaUF() throws JSONException {
-        String conteudo = "";
-        conteudo = object.getString("uf");
-        return conteudo;
+        return uf;
     }
 
     public String retornaCidade() throws JSONException {
-        String conteudo = "";
-        conteudo = object.getString("localidade");
-        return conteudo;
+        return cidade;
     }
-
 }
